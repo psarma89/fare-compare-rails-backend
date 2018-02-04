@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :searches
   has_secure_password
 
   validates :email, presence: true
