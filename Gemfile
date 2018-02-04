@@ -8,6 +8,8 @@ end
 gem 'jwt'
 gem 'figaro'
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'rest-client'
+gem 'json'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
