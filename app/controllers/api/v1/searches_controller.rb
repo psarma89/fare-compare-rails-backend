@@ -21,7 +21,7 @@ class Api::V1::SearchesController < ApplicationController
   private
 
   def search_params
-    params.require.permit(:address)
+    params.permit(:address)
   end
 
 end
