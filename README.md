@@ -1,24 +1,26 @@
-# README
+# Fare Compare
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The cheapest way to find a ride in your city from point A to B. Compares prices from Uber, Lyft, and Taxi Fare to find you the cheapest option. Compare other criteria if you need a specific type of ride.
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+Please visit "" to get started with using Fare Compare. See Demo here.
 
-* System dependencies
+## Built With
 
-* Configuration
+* Semantic UI - The Ui framework used
+* React - The JS front end framework used
+* Ruby on Rails - The back end framework used
 
-* Database creation
+## Future Improvements
 
-* Database initialization
+* Include additional ride sharing services
+* Ability to order ride using OAuth
 
-* How to run the test suite
+## Authors
 
-* Services (job queues, cache servers, search engines, etc.)
+* **Priyam Sarma**
 
-* Deployment instructions
+## License
 
-* ...
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
