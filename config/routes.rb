@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       post '/lyft_fare', to: 'lyfts#price'
       post '/lyft_product', to: 'lyfts#product'
       post '/lyft_estimate', to: 'lyfts#estimate'
-      post '/lyft_location', to: 'lyfts#lyft_location'      
+      post '/lyft_location', to: 'lyfts#location'      
       post '/taxi_fare', to: 'taxis#fare'
       post '/businesses', to: 'taxis#business'
       post '/auth', to: 'auth#create'

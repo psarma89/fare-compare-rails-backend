@@ -1,5 +1,5 @@
 class Api::V1::LyftsController < ApplicationController
-  skip_before_action :authorized, only: [:price, :product, :estimate]
+  skip_before_action :authorized, only: [:price, :product, :estimate, :location]
 
   def product
     lyftHeaders = {"Authorization"=> ENV['lyft_bearer_token'], "Content-Type"=>"application/json"}
