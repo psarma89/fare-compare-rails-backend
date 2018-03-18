@@ -14,8 +14,7 @@ Please visit "" to get started with using Fare Compare. See Demo here.
 
 ## Future Improvements
 
-* Include additional ride sharing services
-* Ability to order ride using OAuth
+* FB and Google Login
 
 ## Authors
 
