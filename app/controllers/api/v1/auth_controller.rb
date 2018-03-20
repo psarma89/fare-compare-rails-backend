@@ -3,12 +3,12 @@ class Api::V1::AuthController < ApplicationController
   skip_before_action :authorized, only: [:create, :show]
 
   def create
-    user = User.find_by(email: params[:email])
+    @user = User.find_by(email: params[:email])
 
-    if user && user.authenticate(params[:password])
+    if @user && @user.authenticate(params[:password])
       # issue that user a token
-      token = issue_token(user)
-      render json: {id: user.id, email: user.email, jwt: token}
+      token = issue_token(@user)
+      render json: {id: @user.id, email: @user.email, jwt: token}
     else
       render json: {error: 'That user could not be found'}, status: 401
     end

@@ -3,14 +3,14 @@ class Api::V1::UsersController < ApplicationController
   skip_before_action :authorized, only: [:create, :update]
 
   def create
-    user = User.new(user_params)
+    @user = User.new(user_params)
     # debugger
 
-    if user.save
-      token = issue_token(user)
-      render json: {id: user.id, email: user.email, jwt: token}
+    if @user.save
+      token = issue_token(@user)
+      render json: {id: @user.id, email: @user.email, jwt: token}
     else
-      render json: { error: user.errors.full_messages[0] }
+      render json: { error: @user.errors.full_messages[0] }
     end
   end
 
@@ -20,12 +20,12 @@ class Api::V1::UsersController < ApplicationController
     elsif params[:password] == ""
       render json: { error: "Enter a new password"}
     else
-      user = User.find_by(email: params[:email])
-      if user.update(password: params[:password])
-        token = issue_token(user)
-        render json: {id: user.id, email: user.email, jwt: token}
+      @user = User.find_by(email: params[:email])
+      if @user.update(password: params[:password])
+        token = issue_token(@user)
+        render json: {id: @user.id, email: @user.email, jwt: token}
       else
-        render json: { error: user.errors.full_messages[0] }
+        render json: { error: @user.errors.full_messages[0] }
       end
     end
   end

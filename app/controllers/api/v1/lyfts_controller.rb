@@ -1,5 +1,5 @@
 class Api::V1::LyftsController < ApplicationController
-  skip_before_action :authorized, only: [:price, :product, :estimate, :location]
+  before_action :authorized
 
   def product
     lyftHeaders = {

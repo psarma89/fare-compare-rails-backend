@@ -1,6 +1,6 @@
 class Api::V1::UbersController < ApplicationController
 
-  skip_before_action :authorized, only: [:price, :product, :estimate]
+  before_action :authorized
 
   def product
     uberHeaders = {
