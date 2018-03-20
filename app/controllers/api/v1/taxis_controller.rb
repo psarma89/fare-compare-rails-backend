@@ -11,9 +11,13 @@ class Api::V1::TaxisController < ApplicationController
     # debugger
     entity = JSON.parse(RestClient.get("https://api.taxifarefinder.com/entity?key="+ENV['taxi_api_key']+"&location="+params[:source][:lat].to_s+","+params[:source][:lng].to_s))["handle"]
 
-    response = JSON.parse(RestClient.get("https://api.taxifarefinder.com/businesses?key="+ENV['taxi_api_key']+"&entity_handle="+entity))
+    if entity
+      response = JSON.parse(RestClient.get("https://api.taxifarefinder.com/businesses?key="+ENV['taxi_api_key']+"&entity_handle="+entity))
 
-    render json: response
+      render json: response
+    else
+      render json: {}
+    end
   end
 
 end
